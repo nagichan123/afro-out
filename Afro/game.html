@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ゲーム画面</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.lettering/0.6.1/jquery.lettering.min.js"></script>
+    <script src="https://cdn.rawgit.com/codrops/Arctext/master/js/jquery.arctext.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <span class="arched-title">アフロのナギが出たら負け</span>
+            <div class="tap-instruction">顔面をTAP!!!</div>
+        </div>        
+        <img id="gameImage" src="https://imgur.com/uERYh1B.png" alt="ゲーム画像">
+        <p id="message" class="message"></p>
+        <button id="retryBtn" class="retry-button" style="display: none;">もう１回</button>
+        <button id="backBtn" class="back-button" style="display: none;">戻る</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

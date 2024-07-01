@@ -1,0 +1,288 @@
+body {
+    font-family: 'Kaisei Opti', serif;
+    background-color: #ffd400;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    height: 100vh; /* コンテナの高さを固定 */
+    max-height: 100vh; /* コンテナの高さを固定 */
+    overflow: hidden; /* コンテナ内のスクロールを防ぐ */
+    width: 100%; /* 幅を100%に設定 */
+    top: 0; /* 上から0の位置に配置 */
+}
+
+.title {
+    width: 100%;
+    position: absolute; /* 絶対位置に変更 */
+    top: 20px; /* タイトルの位置を固定 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    font-size: 1.3em; /* フォントサイズを小さくする */
+}
+
+.arched-title {
+    width: 100%;
+    position: absolute; /* 絶対位置に変更 */
+    top: 50px; /* タイトルの位置を固定 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    font-size: 1.3em; /* フォントサイズを小さくする */
+}
+
+.tap-instruction {
+    font-size: 0.8em; /* フォントサイズを小さくする */
+    color: #333;
+    position: absolute; /* 絶対位置に変更 */
+    left: 50%; /* 横方向の中央揃え */
+    transform: translateX(-50%); /* 横方向の中央揃え */
+    top: 100px; /* .arched-titleの真下に配置 */
+}
+
+img {
+    width: 350px; /* サイズを2倍に */
+    height: 350px; /* サイズを2倍に */
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute; /* 絶対位置に変更 */
+    top: 100px; /* 画像の位置を固定 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+h2 {
+    margin-top: 10px; /* 調整 */
+    margin-bottom: 20px; /* 調整 */
+}
+
+input[type="text"] {
+    width: calc(100% - 40px);
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #28a745;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #333;
+    font-size: 1em;
+    outline: none;
+}
+
+button {
+    padding: 15px 30px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Kaisei Opti', serif;
+    position: absolute; /* 絶対位置に変更 */
+}
+
+button:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+li {
+    background-color: #e0e0e0;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+}
+
+li button {
+    background-color: #dc3545;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 1em;
+}
+
+li button:hover {
+    background-color: #c82333;
+}
+
+@keyframes popup {
+    0% {
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.message {
+    font-size: 40px; /* SAFEとOUTの文字サイズを大きくする */
+    position: absolute; /* 絶対位置に変更 */
+    top: 53%; /* 上から60%の位置に配置 */
+    left: 50%; /* 左から50%の位置に配置 */
+    transform: translate(-50%, -50%); /* 完全に中央に配置 */
+    width: 100%; /* 幅を100%に設定 */
+    text-align: center; /* テキスト中央揃え */
+    opacity: 0; /* 初期状態は透明 */
+    transition: opacity 0.5s; /* フェードイン/アウトのアニメーション */
+}
+
+.message.safe {
+    color: #38b6ff; /* SAFEの文字色 */
+    animation: popup 0.5s forwards; /* ポップアップアニメーション */
+}
+
+.message.out {
+    color: red; /* OUTの文字色 */
+    animation: popup 0.5s forwards; /* ポップアップアニメーション */
+}
+
+
+.lose-image {
+    width: 350px; /* サイズを2倍に */
+    height: 350px; /* サイズを2倍に */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-top: 100px; /* 調整 */
+    margin-bottom: 10px; /* 調整 */
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.home-image {
+    width: 350px; /* サイズを設定 */
+    height: 350px; /* サイズを設定 */
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute; /* 絶対位置に変更 */
+    top: 22%; /* 上から50%の位置に配置 */
+    left: 50%; /* 左から50%の位置に配置 */
+    transform: translate(-50%, -50%); /* 完全に中央に配置 */
+    z-index: 1;
+}
+
+.penalty-selection {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    position: absolute; /* 絶対位置に変更 */
+    top: 400px; /* 罰ゲーム選択の位置を固定 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.penalty-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.penalty-option {
+    background-color: transparent;
+    color: white;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: color 0.3s, box-shadow 0.3s;
+}
+
+.penalty-option.selected {
+    background-color: transparent;
+    color: #d52d22;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.start-button {
+    background-color: #d52d22;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Kaisei Opti', serif;
+    position: absolute; /* 絶対位置に変更 */
+    top: 600px; /* ボタンの位置を固定 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.retry-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    font-family: 'Kaisei Opti', serif;
+    position: absolute; /* 絶対位置に変更 */
+    top: 550px; /* ボタンの上下位置を固定 */
+    left: 35%; /* ボタンの左右位置を調整 */
+    transform: translateX(-50%);
+}
+
+.back-button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+    font-family: 'Kaisei Opti', serif;
+    position: absolute; /* 絶対位置に変更 */
+    top: 550px; /* ボタンの上下位置を固定 */
+    left: 65%; /* ボタンの左右位置を調整 */
+    transform: translateX(-50%);
+}
+
+.retry-button:hover, .back-button:hover {
+    background-color: white;
+    color: #d52d22;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
